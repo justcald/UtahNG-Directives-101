@@ -29,6 +29,19 @@ angular.module('app').controller('mainCtrl', function($scope) {
       'Chewbacca'
     ]
   }
+  $scope.user3 = {
+    name: 'Justin Calder',
+    address: {
+      street: 'PO Box 332',
+      city: 'p-town',
+      planet: 'crazy'
+    },
+    friends: [
+      'Scald',
+      'Hair back jack',
+      'Corkles'
+    ]
+  }
   
 });
 
@@ -41,6 +54,8 @@ angular.module('app').directive('userInfoCard', function() {
     },
     controller: function($scope) {
       $scope.knightMe = function(user) {
+        if(user.name === 'Justin Calder')
+          return user.rank = "sup man"
         user.rank = "knight";
       }
     }
